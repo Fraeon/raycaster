@@ -13,7 +13,7 @@
 var PI = Math.PI
 var DIAMETER = PI * 2;
 
-//Bitmap object
+//Imageloader object
 function Imageloader(source, width, height) {
     this.image = new Image();
     this.width = width;
