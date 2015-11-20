@@ -1,6 +1,5 @@
 //engine.js
 //contains the actual game loop and other miscellaneous
-var USERAGENTS = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 var PI = Math.PI
 var FULLCIRCLE = PI * 2;
 
@@ -33,7 +32,7 @@ var display = document.getElementById('display');
 var player = new Player(4, 10, PI * 0.2);
 var level = new Level(50);
 var control = new Control();
-var view = new View(display, USERAGENTS ? 360 : 640, 0.8);
+var view = new View(display, 0.8, 640);
 var game = new Game();
 level.randomize();
 
