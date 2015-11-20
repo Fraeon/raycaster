@@ -97,10 +97,10 @@ function Player(x, y, direction) {
     //Update the player's position
     this.update = function(control, level, elapsedtime) {
         if (control.forward) {
-            this.walk(3 * elapsedtime, level);
+            this.walk(1.5 * elapsedtime, level);
         }
         if (control.backward) {
-            this.walk(-3 * elapsedtime, level);
+            this.walk(-1.5 * elapsedtime, level);
         }
         if (control.left) {
             this.rotate(-1 * PI * elapsedtime);
