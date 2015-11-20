@@ -11,14 +11,14 @@
 	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]];
 */
 var PI = Math.PI
-var DIAMETER = PI * 2;
+var FULLCIRCLE = PI * 2;
 
 //Imageloader object
 function Imageloader(source, width, height) {
     this.image = new Image();
     this.width = width;
     this.height = height;
-    this.image.src = source;  
+    this.image.src = source;
 }
 
 //Level object
@@ -83,7 +83,7 @@ function Level(size) {
             step.distance = distance + Math.sqrt(step.length2);
             if (shiftx) {
                 step.shading = cos < 0 ? 2 : 0;
-            } 
+            }
             else {
                 step.shading = sin < 0 ? 2 : 1;
             }
