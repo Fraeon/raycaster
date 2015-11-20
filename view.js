@@ -4,7 +4,7 @@ var USERAGENTS = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 var PI = Math.PI
 var FULLCIRCLE = PI * 2;
 
-function View(canvas, resolution, focallength) {
+function View(canvas, focal, resolution) {
 
     this.render = function(player, level) {
         this.drawsky(player.direction, level.skybox, level.light);
@@ -48,7 +48,7 @@ function View(canvas, resolution, focallength) {
         this.context.save();
         for (var column = 0; column < this.resolution; column++) {
             var x = column / this.resolution - 0.5;
-            var angle = Math.atan2(x, this.focallength);
+            var angle = Math.atan2(x, this.focal);
             var viewbeam = level.cast(player, player.direction + angle, this.range);
             this.drawonecolumn(column, viewbeam, angle, level);
         }
@@ -70,7 +70,7 @@ function View(canvas, resolution, focallength) {
     this.height = canvas.height = window.innerHeight * 0.5;
     this.resolution = resolution;
     this.spacing = this.width / resolution;
-    this.focallength = focallength || 0.8;
+    this.focal = 0.6;
     this.range = USERAGENTS ? 8 : 14;
     this.lightRange = 5;
     this.scale = (this.width + this.height) / 1200;
