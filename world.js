@@ -14,7 +14,7 @@ var PI = Math.PI
 var FULLCIRCLE = PI * 2;
 
 //Imageloader object
-function Imageloader(source, width, height) {
+var Imageloader = function(source, width, height) {
     this.image = new Image();
     this.width = width;
     this.height = height;
@@ -22,7 +22,7 @@ function Imageloader(source, width, height) {
 }
 
 //Level object
-function Level(size) {
+var Level = function(size) {
 
     this.get = function(x, y) {
         x = Math.floor(x);
