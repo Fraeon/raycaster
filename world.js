@@ -83,7 +83,8 @@ function Level(size) {
             step.distance = distance + Math.sqrt(step.length2);
             if (shiftx) {
                 step.shading = cos < 0 ? 2 : 0;
-            } else {
+            } 
+            else {
                 step.shading = sin < 0 ? 2 : 1;
             }
             step.offset = offset - Math.floor(offset);
