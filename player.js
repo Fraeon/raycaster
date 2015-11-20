@@ -44,7 +44,7 @@ function Control() {
             'left': false
             , 'right': false
             , 'forward': false
-            , 'backward': false
+            , 'back': false
         };
         e.preventDefault();
         e.stopPropagation();
@@ -54,13 +54,13 @@ function Control() {
         37: 'left'
         , 39: 'right'
         , 38: 'forward'
-        , 40: 'backward'
+        , 40: 'back'
     };
     this.states = {
         'left': false
         , 'right': false
         , 'forward': false
-        , 'backward': false
+        , 'back': false
     };
     document.addEventListener('keydown', this.keypress.bind(this, true), false);
     document.addEventListener('keyup', this.keypress.bind(this, false), false);
@@ -99,7 +99,7 @@ function Player(x, y, direction) {
         if (control.forward) {
             this.walk(1.5 * elapsedtime, level);
         }
-        if (control.backward) {
+        if (control.back) {
             this.walk(-1.5 * elapsedtime, level);
         }
         if (control.left) {
