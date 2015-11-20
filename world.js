@@ -30,13 +30,13 @@ function Level(size) {
         if (x < 0 || x > this.size - 1 || y < 0 || y > this.size - 1) {
             return -1;
         }
-        return this.wallgridarray[y * this.size + x];
+        return this.layout[y * this.size + x];
     }
 
     this.randomize = function() {
         var i = 0;
         while (i < this.size * this.size) {
-            this.wallgridarray[i] = Math.random() < 0.45 ? 1 : 0;
+            this.layout[i] = Math.random() < 0.45 ? 1 : 0;
             i++;
         }
     }
@@ -99,7 +99,7 @@ function Level(size) {
     }
 
     this.size = size;
-    this.wallgridarray = new Array(size * size);
+    this.layout = new Array(size * size);
     this.skybox = new Imageloader('img/skybox.jpg', 1024, 512);
     this.walltexture = new Imageloader('img/quakewall.png', 512, 512);
     this.light = 0;
