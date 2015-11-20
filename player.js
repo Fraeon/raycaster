@@ -81,12 +81,12 @@ function Player(x, y, direction) {
         var distancey = Math.sin(this.direction) * distance;
         //If there's no wall here, move forward till something else happens
         if (level.get(this.x + context, this.y) <= 0) {
-            this.x += context;
+            this.x = this.x + context;
         }
         if (level.get(this.x, this.y + distancey) <= 0) {
-            this.y += distancey;
+            this.y = this.y + distancey;
         }
-        this.momentum == this.momentum + distance;
+        this.momentum = this.momentum + distance;
     }
 
     //Rotation method for the player
