@@ -6,7 +6,7 @@ var FULLCIRCLE = PI * 2;
 //Gameloop object
 //
 //Contains mostly the timing logic needed for the game to run
-function Game() {
+var Game = function () {
 
     //Basic gameloop methods
     this.start = function(callback) {
@@ -29,7 +29,7 @@ function Game() {
 }
 
 var display = document.getElementById('display');
-var player = new Player(4, 10, PI * 0.2);
+var player = new Player(4, 10);
 var level = new Level(50);
 var control = new Control();
 var view = new View(display, 0.8, 640);
