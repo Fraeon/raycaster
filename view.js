@@ -3,7 +3,7 @@
 var PI = Math.PI
 var FULLCIRCLE = PI * 2;
 
-function View(canvas, focal, resolution) {
+var View = function (canvas, focal, resolution) {
 
     this.render = function(player, level) {
         this.drawsky(player.direction, level.skybox, level.light);
