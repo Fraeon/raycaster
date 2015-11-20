@@ -51,16 +51,16 @@ var Control = function () {
     }
 
     this.codes = {
-        37: 'left'
-        , 39: 'right'
-        , 38: 'forward'
-        , 40: 'back'
+        37: 'left',
+        39: 'right',
+        38: 'forward',
+        40: 'back'
     };
     this.states = {
-        'left': false
-        , 'right': false
-        , 'forward': false
-        , 'back': false
+        'left': false,
+        'right': false,
+        'forward': false,
+        'back': false
     };
     document.addEventListener('keydown', this.keypress.bind(this, true), false);
     document.addEventListener('keyup', this.keypress.bind(this, false), false);
