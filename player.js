@@ -6,7 +6,7 @@ var FULLCIRCLE = PI * 2;
 //Control object
 //
 //Contains the properties required for control
-function Control() {
+var Control = function () {
 
     //Poll for key press
     this.keypress = function(v, e) {
@@ -73,7 +73,7 @@ function Control() {
 //Player object
 //
 //Contains the properties that have to do with the player character (e.g. movement)
-function Player(x, y, direction) {
+var Player = function(x, y) {
 
     //Walking method for the player
     this.walk = function(distance, level) {
@@ -114,7 +114,7 @@ function Player(x, y, direction) {
     this.x = x;
     this.y = y;
     this.momentum = 0;
-    this.direction = direction;
+    this.direction = 0.2*PI;
     this.health = 100;
     //this.weapon = ""; None yet
 }
