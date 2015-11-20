@@ -49,10 +49,10 @@ var Level = function(size) {
             length2: Infinity
         };
         return viewbeam({
-            x: point.x
-            , y: point.y
-            , height: 0
-            , distance: 0
+            x: point.x,
+            y: point.y,
+            height: 0,
+            distance: 0
         });
 
         function viewbeam(origin) {
@@ -70,9 +70,9 @@ var Level = function(size) {
             var distancex = run > 0 ? Math.floor(x + 1) - x : Math.ceil(x - 1) - x;
             var distancey = distancex * (rise / run);
             return {
-                x: inverted ? y + distancey : x + distancex
-                , y: inverted ? x + distancex : y + distancey
-                , length2: distancex * distancex + distancey * distancey
+                x: inverted ? y + distancey : x + distancex,
+                y: inverted ? x + distancex : y + distancey,
+                length2: distancex * distancex + distancey * distancey
             };
         }
 
