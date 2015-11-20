@@ -32,10 +32,10 @@ function View(canvas, resolution, focallength) {
 
         while (++hit < viewbeam.length && viewbeam[hit].height <= 0);
 
-        for (var s = viewbeam.length - 1; s >= 0; s--) {
-            var step = viewbeam[s];
+        for (var beamlength = viewbeam.length - 1; beamlength >= 0; beamlength--) {
+            var step = viewbeam[beamlength];
 
-            if (s === hit) {
+            if (beamlength === hit) {
                 var textureRemainder = Math.floor(texture.width * step.offset);
                 var wall = this.project(step.height, angle, step.distance);
                 context.globalalpha = 1;
@@ -60,8 +60,8 @@ function View(canvas, resolution, focallength) {
         var wallheight = this.height * 1.4 * height / z;
         var floor = this.height / 2 * (1 + 1 / z);
         return {
-            top: floor - wallheight
-            , height: wallheight
+            top: floor - wallheight,
+            height: wallheight
         };
     }
 
