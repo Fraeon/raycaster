@@ -1,6 +1,5 @@
 //view.js
 //Contains the player's view
-var USERAGENTS = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 var PI = Math.PI
 var FULLCIRCLE = PI * 2;
 
@@ -71,7 +70,7 @@ function View(canvas, focal, resolution) {
     this.resolution = resolution;
     this.spacing = this.width / resolution;
     this.focal = 0.6;
-    this.range = USERAGENTS ? 8 : 14;
+    this.range = 14;
     this.lightRange = 5;
     this.scale = (this.width + this.height) / 1200;
 }
